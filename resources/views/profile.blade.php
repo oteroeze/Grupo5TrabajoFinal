@@ -11,13 +11,14 @@
         <div class='col-md-8'>
 
             <div class='data-user'>
+                @foreach($user->images as $image)
 
                       <div class="profile-user"> 
-                        @if($user->image)
-                             <div class='container-avatar'>
-                                  <img src="{{route('user.avatar',['filename'=>$user->image])}}" alt='foto de avatar' class='avatar'>
-                              </div>
-                         @endif
+                      @include('includes.avatar', [
+                    'image' => Storage::url($image->user->image)
+                ])
+
+                         
                         </div>
                         
                         <div class='user-info'>
@@ -28,7 +29,6 @@
 
                         <div class="clearfix"></div>
 
-                    @foreach($user->images as $image)
 
                              @include('includes.image', ['image'=>$image])
 

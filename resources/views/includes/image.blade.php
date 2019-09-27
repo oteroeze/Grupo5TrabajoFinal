@@ -1,13 +1,9 @@
 <div class="card pub_image">
             <div class="card-header">
-                @if($image->user->image)
-                <div class='container-avatar'>
-
-                    <img src="{{route('user.avatar',['filename'=>$image->user->image])}}" alt='foto de avatar' class='avatar'>
-
-                </div>
-                @endif
-
+        
+              @include('includes.avatar', [
+                    'image' => Storage::url($image->user->image)
+                ])
                 
                 <div class="data-user">
 
@@ -24,7 +20,9 @@
                 <div class="card-body">
                 
                     <div class="image-container">
+                    <a href="{{route('image.detail',['id'=>$image->id])}}">
                         <img src="{{route('image.file',['filename'=>$image->image_path])}}" alt="">
+                    </a>   
                     </div>
                 
                 </div>
@@ -42,29 +40,22 @@
                 </div>
 
                 <div class="likes">
+                    
 
-                    <?php $user_like = false; ?>
-
-                    @foreach($image->likes as $like)
-                        @if($like->user->id == Auth::user()->id)
-                            <?php $user_like = true; ?>
-                        @endif
-                        @endforeach
-
-                        @if($user_like)
+                        @if( $image->likes->contains('user_id', Auth::user()->id))
                             <a href="https://icons8.com/icon/6636/lion-statue"></a>
                             <img src="{{ asset ('icons/negro.png')}}" data-id="{{$image->id}}" class="btn-dislike">
                         @else 
                             <img src="{{ asset ('icons/rojo.png')}}" data-id="{{$image->id}}" class="btn-like">                
                         @endif
 
-                {{count($image->likes)}}
+                {{$image->likes_count}}
                 </div>
 
 
                <div class='comments'>
                     <a href="{{route('image.detail',['id'=>$image->id])}}" class='btn btn-alert btn-sm btn-comments'>
-                     Ver comentarios ({{count($image->comments)}})
+                     Ver comentarios ({{$image->comments_count}})
                     </a>
                 </div>
                 

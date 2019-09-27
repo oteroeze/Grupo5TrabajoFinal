@@ -5,19 +5,15 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
 
-        @include('includes.message')
+            @include('includes.message')
 
         
-            <div class="card pub_image pub_image_detail">
-            <div class="card-header">
-                @if($image->user->image)
-                <div class='container-avatar'>
+             <div class="card pub_image pub_image_detail">
+             <div class="card-header">
 
-                    <img src="{{route('user.avatar',['filename'=>$image->user->image])}}" alt='foto de avatar' class='avatar'>
-
-                </div>
-                @endif
-
+            @include('includes.avatar', [
+                    'image' => Storage::url($image->user->image)
+                ])
                 
                 <div class="data-user">{{$image->user->nick}}</div>
                 
@@ -40,7 +36,6 @@
 
                 <br>
                  {{$image->description}}
-
                 </div>
 
                 <div class="likes">
@@ -160,17 +155,4 @@
 
                 </div>
 
-
-            </div>
-
-           
-
-        
-         
-      
-
-        
-
-    </div>
-</div>
 @endsection

@@ -84,13 +84,16 @@
 
                             <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Avatar') }}</label>
 
+                            
                             <div class="col-md-6">
+                            @include('includes.avatar', [
+                    'image' => Storage::url(Auth::user()->image)
+                ])
 
-                            @include('includes.avatar')
-
-
-                                <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image"  >
-
+                                <div class="form-group">
+                                    <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image"  >
+                                </div>
+                                
                                 @error('image')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -119,7 +122,7 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div> -->
-
+                        
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

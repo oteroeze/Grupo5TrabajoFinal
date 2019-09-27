@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>HostHelper</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -45,7 +45,7 @@
             .content {
                 text-align: center;
             }
-
+            
             .title {
                 font-size: 84px;
             }
@@ -70,7 +70,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}" style="color:white">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 

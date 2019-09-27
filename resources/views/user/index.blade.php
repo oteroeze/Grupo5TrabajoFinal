@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-9">
         <h1>Gente</h1>
         <form id="buscador" method="GET" action="{{ route('user.index')}}">
             <div class="row">
@@ -17,13 +17,9 @@
             </form>
         <hr>
         @foreach ($users as $user)
-           <div class="profile-user"> 
-                  @if($user->image)
-                      <div class='container-avatar'>
-                           <img src="{{route('user.avatar',['filename'=>$user->image])}}" alt='foto de avatar' class='avatar'>
-                       </div>
-                   @endif
-             </div>
+            
+        <img src="{{Storage::url(Auth::user()->image)}}" alt='foto de avatar'>
+             
                         
              <div class='user-info'>
                   <h2> {{ $user->nick }} </h2>

@@ -12,6 +12,8 @@ class Image extends Model
 {
     protected $table = 'images';
 
+    protected $withCount = ['comments', 'likes'];
+
     //Relacion uno  a muchos
 
     public function comments(){

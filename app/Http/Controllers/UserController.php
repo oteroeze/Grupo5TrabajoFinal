@@ -28,6 +28,7 @@ class UserController extends Controller
     }
     
     public function index($search = null){
+        
         if(!empty($search)){
             $users = User::where('nick', 'LIKE' , '%'.$search.'%')
                            ->orWhere('name', 'LIKE' , '%'.$search.'%')
@@ -37,9 +38,7 @@ class UserController extends Controller
             $users = User::orderBy('id', 'desc')->paginate(5);
         }
 
-        return view('user.index' , [
-          'users' => $users
-        ]);
+        return view('user.index' , compact('users'));
 
     }
 
@@ -94,19 +93,8 @@ class UserController extends Controller
             
             //Subir imagees
             
-            $image = $request->file('image');
-            if($image){
-
-                // Identificar con un nombre unico
-                $image_name = time().$image->getClientOriginalName();
-
-                Storage::disk('users')->put($image_name,File::get($image));
-
-                // Setear el nombre de la imagen en el objeto
-
-               $user->image= $image_name;
-
-
+            if($request->has('image')){
+                $user->image = $request->file('image')->store('public/users');
             }
             
             
@@ -120,14 +108,7 @@ class UserController extends Controller
         }
 
 
-        public function getImage($filename){
-
-            $file=Storage::disk('users')->get($filename);
-            return new Response($file,200);
-            
-
-
-        }
+       
 
         // public function profile ($id){
 
