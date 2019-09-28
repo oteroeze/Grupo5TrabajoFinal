@@ -15,7 +15,7 @@
                     'image' => Storage::url($image->user->image)
                 ])
                 
-                <div class="data-user">{{$image->user->nick}}</div>
+                <div class="data-user">{{'@'.$image->user->nick}}</div>
                 
                 
                 </div>

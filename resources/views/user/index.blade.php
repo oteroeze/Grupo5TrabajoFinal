@@ -28,7 +28,7 @@
 
                         
              <div class='user-info'>
-                  <h2> {{ $user->nick }} </h2>
+                  <h2> {{'@'.$user->nick }} </h2>
                  <h3>{{ $user->name . ' ' . $user->surname }}</h3>
                   <p>{{ 'Se unio: '. ($user->created_at) }}</p>
                   <a href="{{ route('profile' , ['id' => $user->id])}}" class="btn btn-success">Ver perfil</a>

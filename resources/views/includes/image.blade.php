@@ -9,7 +9,7 @@
 
                     <a href="{{route ('profile', ['id'=> $image->user->id]) }}"> 
                 
-                        {{$image->user->nick}}
+                        {{'@'.$image->user->nick}}
                
                     </a>
                  
@@ -43,19 +43,22 @@
                     
 
                         @if( $image->likes->contains('user_id', Auth::user()->id))
-                            <a href="https://icons8.com/icon/6636/lion-statue"></a>
+                            
                             <img src="{{ asset ('icons/negro.png')}}" data-id="{{$image->id}}" class="btn-dislike">
                         @else 
                             <img src="{{ asset ('icons/rojo.png')}}" data-id="{{$image->id}}" class="btn-like">                
                         @endif
 
                 {{$image->likes_count}}
+                
                 </div>
 
 
                <div class='comments'>
                     <a href="{{route('image.detail',['id'=>$image->id])}}" class='btn btn-alert btn-sm btn-comments'>
-                     Ver comentarios ({{$image->comments_count}})
+                    
+                    Ver comentarios ({{$image->comments_count}})
+                    
                     </a>
                 </div>
                 
