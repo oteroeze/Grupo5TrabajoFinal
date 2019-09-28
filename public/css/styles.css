@@ -4,7 +4,6 @@
 };
 
 
-
 .navbar .container-avatar, pub_image .container-avatar img{
 
     width:35px;
@@ -46,6 +45,8 @@ pub_image .container-avatar img{
     margin-bottom:25px;
 
 }
+
+
 
 .pub_image .container-avatar{
     float: left;
@@ -158,6 +159,12 @@ pub_image .container-avatar img{
 .profile-user {
     height: 200px;
     margin-bottom: 40px;
+}
+
+.user-info{
+
+    margin-bottom: 30px;
+
 }
 
 .btn-search {

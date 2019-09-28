@@ -58,7 +58,7 @@
                 {{count($image->likes)}}
                 </div>
                 
-                @if(Auth::user() && Auth::user()->id ==$image->user->id)
+                @if(Auth::user() && Auth::user()->id == $image->user->id)
                     <div class="actions">
                         <a href="{{ route('image.edit' , [ 'id' => $image->id ] )}}" class="btn btn-primary btn-sm">Actualizar</a>
                         <!-- <a href="{{ route('image.delete', ['id' => $image->id ]) }}" class="btn btn-danger">Borrar</a> -->
@@ -75,13 +75,13 @@
 
                             <!-- Modal Header -->
                             <div class="modal-header">
-                                <h4 class="modal-title"> Estas seguro ? </h4>
+                                <h4 class="modal-title"> Estas seguro de eliminar? </h4>
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
 
                             <!-- Modal body -->
                             <div class="modal-body">
-                                Si eliminas esta imagen no hay vuelta atras, pensala...
+                                Esta seguro de eliminar esta imagen?
                             </div>
 
                             <!-- Modal footer -->

@@ -13,17 +13,15 @@
             <div class='data-user'>
                 @foreach($user->images as $image)
 
-                      <div class="profile-user"> 
-                      @include('includes.avatar', [
-                    'image' => Storage::url($image->user->image)
-                ])
+
 
                          
-                        </div>
+                        
                         
                         <div class='user-info'>
-                            <h1> {{ $user->nick }} </h1>
                             <h2>{{ $user->name . ' ' . $user->surname }}</h2>
+                            <h1> {{'@'. $user->nick }} </h1>
+                            
                             <p>{{ 'Se unio: '. ($user->created_at) }}</p>
                         </div>
 

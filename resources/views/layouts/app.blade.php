@@ -13,6 +13,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/main.js') }}" defer></script>
     <!-- Fonts -->
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     
@@ -54,16 +55,17 @@
 
                         
                         <li class="nav-item">
-                            <a class='nav-link'href="{{ route('home') }}" >Inicio</a>
+                        <a class='nav-link'href="{{ route('home') }}" >Inicio    <i class="fas fa-home"></i> </a>
+                            
                         </li>
                         <li class="nav-item">
-                            <a class='nav-link'href="{{route('user.index')}}" >Gente</a>
+                            <a class='nav-link'href="{{route('user.index')}}" >Usuarios   <i class="fas fa-users"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class='nav-link'href="{{route('likes')}}" >Favoritas</a>
+                            <a class='nav-link'href="{{route('likes')}}" >Favoritas   <i class="fas fa-star"></i></a>
                         </li>
                         <li class='nav-item'>
-                            <a class='nav-link' href="{{route('image.create')}}">Postear</a>
+                            <a class='nav-link' href="{{route('image.create')}}">Postear  <i class="fas fa-paper-plane"></i></a>
                         </li>
                         <li>
                         @include('includes.avatar', [
@@ -80,21 +82,22 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 
                                 <a class="dropdown-item" href="{{route('profile',['id' => Auth::user()->id]) }}">
-                                    Mi perfil
+                                    Mi perfil   <i class="fas fa-user"></i> 
                                     
                                 </a>
                                 
                                 <a class="dropdown-item" href="{{route('config')}}">
-                                    Configuracion
+                                    Configuracion <i class="fas fa-wrench"></i>
                                     
                                 </a>
                                 
                                 
                                 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
+                                
                                 onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Logout') }} 
                                     </a>
                                         
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

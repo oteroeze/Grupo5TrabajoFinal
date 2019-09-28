@@ -5,16 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-        <form id="buscador" method="GET" action="{{ route('user.index')}}">
-            <div class="row">
-                <div class="form-group col-8">
-                    <input type="text" id="search" class="form-control">
-                </div>
-                <div class="form-group col btn-search">
-                    <input type="submit" value="Buscar" class="btn btn-success">
-                </div>
-            </div>
-            </form>
+        <h1>What's New <img src="https://img.icons8.com/officel/80/000000/binoculars.png"></h1>
 
         @include('includes.message')
 

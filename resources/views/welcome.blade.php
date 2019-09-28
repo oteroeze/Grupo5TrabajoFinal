@@ -15,6 +15,7 @@
             html, body {
                 
                 background-image:url('/images/fondo-projecto.jpeg');
+                background-position:center;
                 color: white;
                 font-family: 'nunito', sans-serif;
                 font-weight: 200;
