@@ -221,6 +221,10 @@ class ImageController extends Controller
 
             //subir imagen
 
+            // if($request->has('image_path')){
+            //     $image->image_path = $request->file('image_path')->store('public/images');
+            // }
+
             if($image_path){
 
                 $image_path_name = time(). $image_path->getClientOriginalName();

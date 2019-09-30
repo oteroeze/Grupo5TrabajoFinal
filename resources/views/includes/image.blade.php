@@ -43,13 +43,12 @@
                     
 
                         @if( $image->likes->contains('user_id', Auth::user()->id))
-                            
-                            <img src="{{ asset ('icons/negro.png')}}" data-id="{{$image->id}}" class="btn-dislike">
+                        <img src="{{ asset ('icons/rojo.png')}}" data-id="{{$image->id}}" class="btn-like"> 
                         @else 
-                            <img src="{{ asset ('icons/rojo.png')}}" data-id="{{$image->id}}" class="btn-like">                
+                        <img src="{{ asset ('icons/negro.png')}}" data-id="{{$image->id}}" class="btn-dislike">              
                         @endif
 
-                {{$image->likes_count}}
+           
                 
                 </div>
 

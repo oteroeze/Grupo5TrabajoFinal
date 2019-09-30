@@ -16,9 +16,13 @@ window.addEventListener('load', function() {
                 type: 'GET',
                 success: function(response) {
                     if(response.like){
-                        console.log('has dado like putete');
+                        $count = document.querySelector('.count_js').innerText;
+                        $total = $count++;
+                        console.log($count);
+
+                        
                     }else{
-                        console.log('error de like trolazo');
+                        console.log('error de like');
                     }
                 }
             });
@@ -38,9 +42,13 @@ window.addEventListener('load', function() {
                 type: 'GET',
                 success: function(response) {
                     if(response.like){
-                        console.log('has dado dislike putete');
+                        $count = document.querySelector('.count_js').innerText;
+                        $total = $count--;
+                        console.log($count);
+
+                        
                     }else{
-                        console.log('error de dislike trolazo');
+                        console.log('error de dislike');
                     }
                 }
             });
