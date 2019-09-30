@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>HostHelper</title>
+        <title>Sone gateroooo</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -84,11 +84,14 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Host Helper
+                    HostHelper
                 </div>
 
                 <div class='content'>
-                <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis inventore culpa pariatur nemo modi debitis laudantium, reprehenderit possimus dolorem, natus ea aspernatur magnam quis placeat nihil autem obcaecati sequi. Eum!  </p>
+
+                <p>HostHelper nace como el proyecto integrador final para el curso de Full Stack en Digital house de Ezequiel Otero, Enzo Amarilla y Santiago de la Fuente. Si bien a futuro el proyecto lo que pretende es integrar las partes entre ofertantes de alojamiento con demanda de trabajo, en este primer MVP la finalidad buscada fue lograr la interaccion entre las partes mediante: Comentarios, Likes y visualizacion de perfil. Asimismo cada usuario, el cual se identifica con un alias, podra realizar posteos e interactuar con otros usuarios dentro de la misma web en tiempo real</p>
+
+
                 </div>
 
               

@@ -14,10 +14,11 @@
                 @foreach($user->images as $image)
 
 
-
+                    @if ($image == NULL)
                          
+                         <h1>Aun no has posteado ninguna imagen</h1>
                         
-                        
+                    @else
                         <div class='user-info'>
                             <h2>{{ $user->name . ' ' . $user->surname }}</h2>
                             <h1> {{'@'. $user->nick }} </h1>
@@ -29,9 +30,9 @@
 
 
                              @include('includes.image', ['image'=>$image])
-
+                         @endif
                     @endforeach    
-                 
+               
              </div>
 
         </div>
